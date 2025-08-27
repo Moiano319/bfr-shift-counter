@@ -117,9 +117,7 @@ if uploaded:
         f"Requests: **{requests}**"
     )
 
-    with st.expander("Show first 10 data rows (from header)"):
-        preview_reader = csv.reader(lines[header_idx:])
-        st.code("\n".join([next(preview_reader).__repr__() for _ in range(12)]), language="text")
 
 else:
     st.info("Upload a CSV to begin.")
+
