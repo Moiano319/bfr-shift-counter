@@ -4,8 +4,7 @@ import streamlit as st
 st.set_page_config(page_title="Shift Counter", page_icon="⚙️", layout="centered")
 st.title("Vitti's BFR Shift Counter")
 
-st.caption("Counts upshifts/downshifts from a MoTeC i2 CSV. "
-           "Drops all transient neutral readings.")
+st.caption("Counts upshifts/downshifts from a MoTeC i2 CSV and drops all transient neutral readings.")
 st.caption("Please upload a CSV file that only contains the channels 'Gear' and 'Engine Speed'")
 
 uploaded = st.file_uploader("Upload CSV", type=["csv"])
@@ -93,6 +92,7 @@ if uploaded:
 
 else:
     st.info("Upload a CSV to begin.")
+
 
 
 
