@@ -8,8 +8,8 @@ st.caption("Counts upshifts/downshifts from a MoTeC i2 CSV and drops all transie
 st.caption("Please upload a CSV file that only contains the channels 'Gear' and 'Engine Speed'")
 
 uploaded = st.file_uploader("Upload CSV", type=["csv"])
-st.caption("Any shifts before Engine Speed reaches this threshold will not be counted. This eliminates any manual shifting that may occur before the engine starts.")
 rpm_threshold = st.number_input("RPM start threshold", value=2800.0, step=100.0)
+st.caption("Any shifts before Engine Speed reaches this threshold will not be counted. This eliminates any manual shifting that may occur before the engine starts.")
 
 RPM_COL = "Engine Speed"
 GEAR_COL = "Gear"
@@ -92,6 +92,7 @@ if uploaded:
 
 else:
     st.info("Upload a CSV to begin.")
+
 
 
 
