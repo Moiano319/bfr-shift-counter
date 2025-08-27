@@ -80,11 +80,7 @@ if uploaded:
     up, down, total, start_idx, start_rpm = count_shifts_after_start(rows, rpm_i, gear_i, rpm_threshold)
 
     st.subheader("Results")
-    st.metric("Upshifts", up)
-    st.metric("Downshifts", down)
-    st.metric("Total shifts", total)
-    
-    col1, col2, col3 = st.columns([2, 1, 1])
+    col1, col2, col3 = st.columns([1, 1, 1])
     with col1:
         st.metric("Total shifts", total)
     with col2:
@@ -100,5 +96,6 @@ if uploaded:
 
 else:
     st.info("Upload a CSV to begin.")
+
 
 
