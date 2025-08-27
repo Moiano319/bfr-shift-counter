@@ -10,7 +10,7 @@ st.caption("Upload a CSV that contains exactly these channels: 'Engine Speed', '
 
 uploaded = st.file_uploader("Upload CSV", type=["csv"])
 rpm_threshold = st.number_input("RPM start threshold", value=2800.0, step=100.0)
-st.caption("Any shifts/requests before Engine Speed reaches this threshold will not be counted. This eliminates any manual shifting that may occur before the engine starts.")
+st.caption("Any shifts/requests before Engine Speed reaches this threshold will not be counted. This eliminates any manual shifting or paddle checks that may occur before the engine starts.")
 
 RPM_COL  = "Engine Speed"
 GEAR_COL = "Gear"
@@ -120,5 +120,6 @@ if uploaded:
 
 else:
     st.info("Upload a CSV to begin.")
+
 
 
