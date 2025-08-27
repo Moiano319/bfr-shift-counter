@@ -4,7 +4,7 @@ import streamlit as st
 st.set_page_config(page_title="Shift Counter", page_icon="⚙️", layout="centered")
 st.title("Vitti's BFR Shift Counter")
 
-st.caption("Counts total gear shifts and miss-shifts from a MoTeC i2 CSV. "
+st.caption("Counts total gear shifts and missed shifts from a MoTeC i2 CSV. "
            "Neutral (0) and blanks in Gear are ignored (transient neutrals dropped).")
 st.caption("Upload a CSV that contains exactly these channels: 'Engine Speed', 'Gear', and 'Gear Shift Request'.")
 
@@ -109,7 +109,7 @@ if uploaded:
     with c1:
         st.metric("Total shifts", total_shifts)
     with c2:
-        st.metric("Miss-Shifts", miss_shifts)
+        st.metric("Missed Shifts", miss_shifts)
 
     st.caption(
         f"Start index: **{start_idx if start_idx is not None else 'n/a'}** · "
@@ -120,4 +120,5 @@ if uploaded:
 
 else:
     st.info("Upload a CSV to begin.")
+
 
