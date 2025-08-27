@@ -93,7 +93,7 @@ if uploaded:
     expected = {RPM_COL, GEAR_COL, REQ_COL}
     actual = [h.strip() for h in headers]
     if set(actual) != expected or len(actual) != 3:
-        st.error(f"Ya got too many (or the wrong) channels 😔 We only want: {sorted(expected)}. You gave us: {actual}")
+        st.error(f"Ya got too many channels 😔 We only want: {sorted(expected)}. You gave us: {actual}")
         st.stop()
 
     rpm_i = headers.index(RPM_COL)
@@ -120,6 +120,7 @@ if uploaded:
 
 else:
     st.info("Upload a CSV to begin.")
+
 
 
 
